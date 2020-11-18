@@ -32,7 +32,7 @@ class App extends Component {
         const [hours, minutes, seconds] = [currTime.getHours(), currTime.getMinutes(), currTime.getSeconds()];
 
         const amOrPm = hours >= 12 ? "PM" : "AM";
-        const twelveHourFormat = hours > 12 ? (hours - 12) : hours;
+        const twelveHourFormat = hours > 12 ? hours - 12 : hours;
         const hourString = " " + twelveHourFormat;
         const minuteString = this.padNumberToTwoDigit(minutes);
         const secondString = this.padNumberToTwoDigit(seconds);
@@ -43,8 +43,8 @@ class App extends Component {
     }
     padNumberToTwoDigit(num) {
         //return (num < 10 ? ("0" + num) : ("" + num));
-        return ((num < 10 ? "0" : "") + num);
-        // return (`${num < 10 ? "0" : ""}${num}`);
+        // return ((num < 10 ? "0" : "") + num);
+        return `${num < 10 ? "0" : ""}${num}`;
     }
 }
 
