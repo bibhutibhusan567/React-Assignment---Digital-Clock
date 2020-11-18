@@ -23,6 +23,10 @@ class App extends Component {
         }, 1 * 1000);
     }
 
+    componentWillUnmount() {
+        clearInterval(this.intervalId);
+    }
+
     getTimeString() {
         const currTime = this.state.time;
         const [hours, minutes, seconds] = [currTime.getHours(), currTime.getMinutes(), currTime.getSeconds()];
