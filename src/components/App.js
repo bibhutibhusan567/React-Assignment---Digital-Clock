@@ -31,7 +31,7 @@ class App extends Component {
         const currTime = this.state.time;
         const [hours, minutes, seconds] = [currTime.getHours(), currTime.getMinutes(), currTime.getSeconds()];
 
-        const amOrPm = hours >= 12 ? "Pm" : "Am";
+        const amOrPm = hours >= 12 ? "PM" : "AM";
         const twelveHourFormat = hours > 12 ? (hours - 12) : hours;
         const hourString = "" + twelveHourFormat;
         const minuteString = this.padNumberToTwoDigit(minutes);
